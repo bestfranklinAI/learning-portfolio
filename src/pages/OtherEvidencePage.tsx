@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
-import { Video, BookOpen, Lightbulb, ExternalLink, FileText, Brain } from 'lucide-react';
+import { Video, BookOpen, Lightbulb, ExternalLink, FileText, Brain, Users, Bot, Library } from 'lucide-react';
 import { CompetencyBadge } from '../components/ui';
+import assessmentCenterImg from '../assets/assessment-center.jpg';
+import aiInterviewImg from '../assets/ai-interview.png';
+import libraryGuideImg from '../assets/library-guide.png';
 
 interface LearningEvidenceCardProps {
   title: string;
@@ -114,22 +117,6 @@ export function OtherEvidencePage() {
       type: 'video',
       howIUsedIt: 'I used STAR far beyond interviews. When writing our business plan Executive Summary, I structured it the same way: here is the problem (Situation), here is what we are trying to achieve (Task), here is our approach (Action), here is the impact (Result). The judges commented that our Executive Summary was "exceptionally clear." That clarity came directly from applying the STAR logic to written communication, not just spoken.',
       competencyBadge: { label: 'Communicative Competency', variant: 'communicative' }
-    },
-    {
-      title: 'Audience Awareness Module',
-      source: 'Week 7 Self Learning',
-      whatILearned: 'This module shifted my perspective on what "good communication" means. Before, I thought clarity was about what I said. After this module, I understood that clarity is about what the listener understands. These are not the same thing. The module used examples of technical experts who lost their audience by using jargon, and salespeople who connected by using the listener\'s own vocabulary. It made me realize that every communication decision should start with the question: who is receiving this?',
-      type: 'module',
-      howIUsedIt: 'As the finance lead, my instinct was to use precise financial terminology like "EBITDA," "Operating Leverage," and "Working Capital Cycle." These are accurate terms. But remembering that our judges might not be finance professionals, I rewrote my pitch section to use accessible equivalents. Instead of "Operating Leverage," I said "Our fixed costs stay constant while revenue grows." Instead of "EBITDA," I said "Profit before accounting adjustments." The meaning stayed the same, but the barrier to understanding dropped significantly.',
-      competencyBadge: { label: 'Communicative Competency', variant: 'communicative' }
-    },
-    {
-      title: 'ChatGPT 5 as a Critique Partner',
-      source: 'GenAI Tool',
-      whatILearned: 'Using AI as a sounding board taught me something important about feedback: it is only useful if you know how to filter it. ChatGPT excelled at logical stress testing. When I presented our IRR assumptions, it immediately identified that our training costs might be underestimated. But it also gave generic advice about "influencer marketing" that did not fit our B2B strategy at all. The skill is not just getting feedback. The skill is knowing which feedback to accept and which to discard.',
-      type: 'module',
-      howIUsedIt: 'I used ChatGPT to simulate investor skepticism before our actual pitch. I would input our assumptions and ask "What are the three biggest weaknesses in this plan?" The responses helped me anticipate Q&A challenges. When a judge later questioned our 63% IRR, I was ready with the B2B pivot explanation because I had already rehearsed that defense with AI. However, I consciously rejected the AI\'s marketing suggestions because I understood our business model better than the AI could from a short prompt.',
-      competencyBadge: { label: 'Academic Competency', variant: 'academic' }
     }
   ];
 
@@ -182,60 +169,242 @@ export function OtherEvidencePage() {
       {/* Synthesis Reflection */}
       <section className="py-12 bg-white border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mock Assessment Center Experience */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center">
+                <Users className="w-6 h-6 text-purple-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-slate-800 mb-0">
+                  Mock Assessment Center Experience
+                </h2>
+                <p className="text-sm text-slate-500">Organized by my Department</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Photo Evidence */}
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">📸 Evidence: Assessment Center Activity</p>
+                <img 
+                  src={assessmentCenterImg} 
+                  alt="Mock Assessment Center - Animal Drawing Activity" 
+                  className="w-full rounded-lg border border-slate-100"
+                />
+                <p className="text-sm text-slate-600 mt-3 italic">
+                  The "Draw an Animal" icebreaker activity where participants introduced themselves through animal metaphors.
+                </p>
+              </div>
+
+              {/* Reflection Content */}
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-5 border border-slate-200">
+                  <h3 className="font-semibold text-slate-800 mb-3">The Experience</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    This semester, I participated in a mock assessment center organized by my department. It was a great opportunity to apply what I learned in LABU2060 in a realistic professional setting. One memorable activity asked us to <strong>draw an animal that represents ourselves</strong>, then walk around the room to find another animal we'd want as a business partner.
+                  </p>
+                </div>
+
+                <div className="bg-purple-50 rounded-xl p-5 border border-purple-100">
+                  <h3 className="font-semibold text-slate-800 mb-3">My Choice: The Lion 🦁</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    I drew a <strong>lion</strong> because I aspire to be a strong leader in the business world, someone who can confidently lead teams and take charge in high-stakes situations. This directly reflects the <strong>Leadership</strong> and <strong>Confidence in Spoken Communication</strong> skills I developed through LABU2060, particularly during the Phase II group pitch where I presented our financial projections with conviction.
+                  </p>
+                </div>
+
+                <div className="bg-amber-50 rounded-xl p-5 border border-amber-100">
+                  <h3 className="font-semibold text-slate-800 mb-3">My Partner: The Owl 🦉</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    I chose an <strong>owl</strong> as my ideal business partner—an animal whose head can turn 360° with great senses. This represents someone with exceptional <strong>awareness</strong> and <strong>perspective-taking abilities</strong>. This choice reflects my understanding of <strong>Intercultural Competency</strong> and <strong>Team Skills</strong>: a good team needs both bold leaders and thoughtful observers who can see what others miss.
+                  </p>
+                </div>
+
+                <div className="flex gap-2 flex-wrap">
+                  <CompetencyBadge label="Leadership" variant="highlight" />
+                  <CompetencyBadge label="Interpersonal Competency" variant="interpersonal" />
+                  <CompetencyBadge label="Team Skills" variant="default" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* AI Interview Tool */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center">
+                <Bot className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-semibold text-slate-800 mb-0">
+                  Interviews by AI
+                </h2>
+                <p className="text-sm text-slate-500">AI-Powered Interview Preparation Tool</p>
+              </div>
+              <a 
+                href="https://interviewsby.ai/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              >
+                <span>Visit Tool</span>
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Reflection Content */}
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-5 border border-slate-200">
+                  <h3 className="font-semibold text-slate-800 mb-3">What It Is</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    <strong>Interviews by AI</strong> is an innovative AI tool that helped me polish my interviewing skills beyond what classroom practice could offer. The AI agent analyzes both my <strong>voice</strong> and <strong>video</strong> in real-time, providing constructive feedback on aspects like tone, pacing, filler words, body language, and eye contact.
+                  </p>
+                </div>
+
+                <div className="bg-blue-50 rounded-xl p-5 border border-blue-100">
+                  <h3 className="font-semibold text-slate-800 mb-3">How It Helped Me</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    I found this tool incredibly useful for practicing the skills I learned in Phase I. The AI would flag my filler words ("uhm," "like") and remind me to use <strong>strategic pauses</strong> instead, exactly what my instructor emphasized. It also tracked my eye contact and body language, helping me apply the <strong>Lighthouse Technique</strong> even when practicing alone. The instant feedback loop accelerated my improvement significantly.
+                  </p>
+                </div>
+
+                <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
+                  <div className="flex items-start gap-3">
+                    <Lightbulb className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h4 className="text-sm font-semibold text-slate-700 mb-1 mt-0">Connection to LABU2060</h4>
+                      <p className="text-sm text-slate-600 mb-0 leading-relaxed" style={{ lineHeight: '1.7' }}>
+                        This tool extended my learning from the Mock Interview. While LABU2060 taught me the <strong>STAR framework</strong> and theory of non-verbal communication, Interviews by AI gave me unlimited practice with objective, data-driven feedback on my actual performance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex gap-2 flex-wrap">
+                  <CompetencyBadge label="Communicative Competency" variant="communicative" />
+                  <CompetencyBadge label="GenAI Literacy" variant="academic" />
+                  <CompetencyBadge label="Independent Learning" variant="default" />
+                </div>
+              </div>
+
+              {/* Screenshot Evidence */}
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">📸 Evidence: AI Interview Tool</p>
+                <img 
+                  src={aiInterviewImg} 
+                  alt="Interviews by AI - AI-Powered Interview Preparation" 
+                  className="w-full rounded-lg border border-slate-100"
+                />
+                <p className="text-sm text-slate-600 mt-3 italic">
+                  The AI interview platform provides real-time analysis of voice, video, and communication patterns.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Library Guide */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center">
+                <Library className="w-6 h-6 text-emerald-600" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-semibold text-slate-800 mb-0">
+                  LABU2060 Library Guide
+                </h2>
+                <p className="text-sm text-slate-500">Research Resources for Phase II Project</p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Screenshot Evidence */}
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                <p className="text-xs text-slate-500 mb-3 font-medium uppercase tracking-wide">📸 Evidence: Library Guide</p>
+                <img 
+                  src={libraryGuideImg} 
+                  alt="LABU2060 Library Guide for Phase II Research" 
+                  className="w-full rounded-lg border border-slate-100"
+                />
+                <p className="text-sm text-slate-600 mt-3 italic">
+                  The comprehensive library guide with research databases and business planning resources.
+                </p>
+              </div>
+
+              {/* Reflection Content */}
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-5 border border-slate-200">
+                  <h3 className="font-semibold text-slate-800 mb-3">What It Taught Me</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    This library guide was a game-changer for our Phase II research. It introduced me to powerful databases and tools I didn't know existed:
+                  </p>
+                  <ul className="mt-3 space-y-2 text-slate-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 font-bold">•</span>
+                      <span><strong>Statista</strong> — For market size and industry statistics</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 font-bold">•</span>
+                      <span><strong>data.gov.hk</strong> — For Hong Kong-specific government data</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-600 font-bold">•</span>
+                      <span><strong>ProQuest</strong> — For academic and business research</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="bg-emerald-50 rounded-xl p-5 border border-emerald-100">
+                  <h3 className="font-semibold text-slate-800 mb-3">How I Applied It</h3>
+                  <p className="text-slate-600 leading-relaxed" style={{ lineHeight: '1.8' }}>
+                    The guide also included links to resources for constructing business plans and pitches. I used <strong>Statista</strong> to find chocolate market data for our Hello Cocoa projections, and <strong>data.gov.hk</strong> for SEN employment statistics in Hong Kong. This elevated my <strong>Academic Competency</strong>—instead of making unsupported claims, I could back every assumption with credible, citable data. When judges questioned our market assumptions, I could point to specific sources.
+                  </p>
+                </div>
+
+                <div className="flex gap-2 flex-wrap">
+                  <CompetencyBadge label="Academic Competency" variant="academic" />
+                  <CompetencyBadge label="Critical Thinking" variant="highlight" />
+                  <CompetencyBadge label="Independent Learning" variant="default" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Synthesis Summary */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <Brain className="w-6 h-6 text-slate-700" />
-              <h2 className="text-2xl font-semibold text-slate-800">
-                Connecting the Dots
-              </h2>
-            </div>
-            
-            <div className="space-y-4 text-slate-600 leading-relaxed" style={{ lineHeight: '1.9' }}>
-              <p>
-                Looking back at these five resources, I see a pattern that was not obvious while 
-                I was learning. Each one taught me a framework for imposing structure on complexity. 
-                STAR gives structure to storytelling. Issue Trees give structure to problem analysis. 
-                The Service Subsidization Model gives structure to social enterprise design. Audience 
-                Awareness gives structure to message tailoring.
-              </p>
-              
-              <p>
-                The deeper insight is that these skills are transferable across contexts. The STAR 
-                logic that helped me answer interview questions also helped me write a clear Executive 
-                Summary. The Issue Tree that clarified our problem analysis also helped me structure 
-                my pitch section. The Audience Awareness that made me simplify financial jargon also 
-                made me a better teammate when explaining concepts to non-finance members.
-              </p>
-
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200 mt-6">
-                <h3 className="font-semibold text-slate-800 mb-4 flex items-center gap-2">
-                  <Lightbulb className="w-5 h-5 text-amber-500" />
-                  The Meta Skill
-                </h3>
-                <p className="text-slate-700 leading-relaxed" style={{ lineHeight: '1.9' }}>
-                  If I had to name one overarching skill I developed through this course, it would 
-                  be <strong>framework fluency</strong>. The ability to recognize when a situation 
-                  calls for a particular structure, and the flexibility to adapt that structure 
-                  to the specific context. Whether I am pitching to investors, interviewing for 
-                  jobs, or writing reports for future managers, I now have a toolkit of mental 
-                  models that I can deploy as needed. LABU2060 gave me more than communication 
-                  techniques. It gave me a way of thinking about communication.
-                </p>
+            <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-6 border border-indigo-100">
+              <div className="flex items-center gap-3 mb-4">
+                <Brain className="w-6 h-6 text-indigo-600" />
+                <h3 className="text-lg font-semibold text-slate-800">The Meta Skill: Framework Fluency</h3>
               </div>
-
-              <p className="mt-6">
-                These are not skills I will leave behind after this course ends. When I am presenting 
-                financial analysis to managers, I will use the Lighthouse Technique for eye contact 
-                and the STAR structure for explanations. When I am pitching ideas to teams, I will 
-                use Issue Trees to break down problems and Audience Awareness to tailor my message. 
-                When I go through real job interviews, I will use the Pause Over Filler strategy 
-                and PREP for impromptu questions. The learning continues because the skills 
-                transfer everywhere.
+              <p className="text-slate-700 leading-relaxed" style={{ lineHeight: '1.9' }}>
+                Looking back at all these learning experiences, I see a common thread. Each one taught me a <strong>framework for imposing structure on complexity</strong>. STAR gives structure to storytelling. Issue Trees give structure to problem analysis. The Library Guide gives structure to research. Even the Assessment Center's animal exercise gave structure to self-reflection.
+              </p>
+              <p className="text-slate-700 leading-relaxed mt-4" style={{ lineHeight: '1.9' }}>
+                LABU2060 gave me more than communication techniques. It gave me a way of thinking about communication, and tools like AI Interview and the Library Guide extended that learning beyond the classroom. These are skills I will carry into my career.
               </p>
             </div>
           </motion.div>
