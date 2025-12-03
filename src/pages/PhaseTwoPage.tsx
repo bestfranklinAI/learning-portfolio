@@ -1,17 +1,21 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { 
-  CompetencyBadge
+  CompetencyBadge,
+  GoogleDriveVideo
 } from '../components/ui';
-import { FileText, Presentation, CheckCircle, AlertCircle, TrendingUp, Users, Lightbulb, Camera, ChevronDown, GraduationCap, Bot, Video, Play } from 'lucide-react';
+import { FileText, Presentation, CheckCircle, AlertCircle, TrendingUp, Users, Lightbulb, Camera, ChevronDown, GraduationCap, Bot, Video, Play, ExternalLink } from 'lucide-react';
 import financialPhoto from '../assets/financial.jpg';
 import groupPhoto from '../assets/group.jpg';
 import pitchPdf from '../assets/LABU2060-SENsational-pitch.pdf';
+import businessPlanPdf from '../assets/LABU2060 - Final Business Plan.pdf';
 import chatgpt1 from '../assets/chatgpt1.png';
 import chatgpt2 from '../assets/chatgpt2.png';
 import chatgpt3 from '../assets/chatgpt3.png';
 import peerQuestionImg from '../assets/peer-question-financial.png';
 import instructorFeedbackImg from '../assets/instructor-feedback-financial.png';
+import franklinPhoto from '../assets/franklin.png';
+import whitneyPhoto from '../assets/whitney.png';
 
 // GenAI conversation - removed, using screenshots instead
 
@@ -129,8 +133,174 @@ export function PhaseTwoPage() {
         </div>
       </section>
 
-      {/* Deep Dive Reflection Section 1: What Worked */}
+      {/* Video Evidence Section */}
       <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
+                <Video className="w-5 h-5 text-violet-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">
+                Pitch Video Evidence
+              </h2>
+            </div>
+
+            <p className="text-slate-600 mb-8 leading-relaxed" style={{ lineHeight: '1.9' }}>
+              The following videos document my pitch journey from self-practice to the final presentation. 
+              Each recording captures a different stage of development and allows for comparison of growth.
+            </p>
+
+            <div className="space-y-8">
+              {/* Self Practice Pitch Video */}
+              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
+                    <Play className="w-4 h-4 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-800">Self Practice Pitch (In-Class)</h3>
+                    <p className="text-sm text-slate-500">Individual rehearsal before the final presentation</p>
+                  </div>
+                </div>
+                <GoogleDriveVideo
+                  driveUrl="https://drive.google.com/file/d/1yC_0WW49NRBSV9K3KEc7pgrFsGpdcaCC/view?usp=drive_link"
+                  title="In-Class Self Practice Pitch"
+                />
+                
+                {/* Self Practice Reflection */}
+                <div className="p-6 bg-amber-50 border-t border-amber-100">
+                  <div className="flex items-center gap-2 mb-4">
+                    <CompetencyBadge label="Communicative Competency" variant="communicative" />
+                    <CompetencyBadge label="Interpersonal Competency" variant="interpersonal" />
+                  </div>
+                  <h4 className="font-semibold text-slate-800 mb-3">Self-Reflection on Practice Session</h4>
+                  <div className="space-y-4 text-slate-700" style={{ lineHeight: '1.9' }}>
+                    <p>
+                      During this in-class self-practice session, I was not fully prepared, which affected the 
+                      clarity of my delivery. Watching the recording, I noticed several areas that needed improvement:
+                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="bg-white rounded-lg p-4 border border-amber-200">
+                        <h5 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
+                          <AlertCircle className="w-4 h-4" />
+                          Areas for Improvement
+                        </h5>
+                        <ul className="text-sm text-slate-600 space-y-2">
+                          <li className="flex items-start gap-2">
+                            <span className="text-amber-600 mt-1">•</span>
+                            <span><strong>Body orientation:</strong> I frequently turned toward the slides rather than facing the audience, which diminished audience engagement and made it seem like I was reading from the screen.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-amber-600 mt-1">•</span>
+                            <span><strong>Vocal monotony:</strong> My tone remained flat throughout, lacking the vocal variety needed to emphasize key points and maintain audience interest.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-amber-600 mt-1">•</span>
+                            <span><strong>Audience awareness:</strong> The lack of eye contact and forward-facing posture made the pitch feel more like a presentation to a screen rather than a persuasive appeal to potential investors.</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="bg-white rounded-lg p-4 border border-green-200">
+                        <h5 className="font-semibold text-green-800 mb-2 flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4" />
+                          What I Did Well
+                        </h5>
+                        <ul className="text-sm text-slate-600 space-y-2">
+                          <li className="flex items-start gap-2">
+                            <span className="text-green-600 mt-1">•</span>
+                            <span><strong>Body gestures:</strong> I used natural hand movements to illustrate key ideas, which added visual interest and helped emphasize important points.</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-green-600 mt-1">•</span>
+                            <span><strong>Content structure:</strong> Despite the delivery challenges, the logical flow of my financial section remained coherent.</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-indigo-200">
+                      <h5 className="font-semibold text-indigo-800 mb-2 flex items-center gap-2">
+                        <TrendingUp className="w-4 h-4" />
+                        Improvements Applied in Final Pitch
+                      </h5>
+                      <ul className="text-sm text-slate-600 space-y-2">
+                        <li className="flex items-start gap-2">
+                          <span className="text-indigo-600 mt-1">•</span>
+                          <span>Practiced maintaining forward-facing posture and only glancing briefly at slides for reference</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-indigo-600 mt-1">•</span>
+                          <span>Incorporated vocal variation—slowing down for emphasis on key figures like "63% IRR" and raising energy during growth projections</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-indigo-600 mt-1">•</span>
+                          <span>Expanded my use of hand gestures to be more deliberate and meaningful</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-indigo-600 mt-1">•</span>
+                          <span>Applied the "Lighthouse Technique" for systematic eye contact with judges</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* My Final Business Pitch Video */}
+              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+                <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
+                    <Play className="w-4 h-4 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-800">My Final Business Pitch</h3>
+                    <p className="text-sm text-slate-500">Our team's official pitch presentation • Timestamp: 2:35 - 8:12</p>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-3 gap-0">
+                  <div className="md:col-span-1">
+                    <img 
+                      src={franklinPhoto} 
+                      alt="Franklin presenting the final business pitch" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:col-span-2 p-6 flex flex-col justify-center bg-gradient-to-br from-green-50 to-emerald-50">
+                    <h4 className="font-semibold text-slate-800 mb-3">Final Pitch Recording</h4>
+                    <p className="text-slate-600 mb-4" style={{ lineHeight: '1.8' }}>
+                      This recording captures our team's official business pitch for "SENsational" by Hello Cocoa. 
+                      My section covers the financial projections and funding ask, demonstrating the improvements 
+                      I made after reflecting on my practice session.
+                    </p>
+                    <div className="bg-white rounded-lg p-4 border border-green-200 mb-4">
+                      <p className="text-sm text-slate-600">
+                        <strong>My segment:</strong> 2:35 - 8:12 (Financial Analysis & Funding Ask)
+                      </p>
+                    </div>
+                    <a
+                      href="https://hkust.zoom.us/rec/play/ZiZRsDoyfQ0ocppk1JBkOdRFeYOKDa0_q7dwFpfOVxS4KcpbhPQLSBj-ktKmC5mozhzB3tX-jp6Tf1wC.tLDBIemiFjV8jcZI"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors w-fit"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Watch Full Pitch Recording
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Deep Dive Reflection Section 1: What Worked */}
+      <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -227,7 +397,7 @@ export function PhaseTwoPage() {
       </section>
 
       {/* Deep Dive Reflection Section 2: What Needed Improvement */}
-      <section className="py-12 bg-slate-50">
+      <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -324,7 +494,7 @@ export function PhaseTwoPage() {
       </section>
 
       {/* Deep Dive Reflection Section 3: Future Application */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -420,6 +590,111 @@ export function PhaseTwoPage() {
                     scenarios where my ability to communicate with confidence will determine whether 
                     my ideas get adopted or ignored.
                   </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Peer Review Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                <Users className="w-5 h-5 text-blue-600" />
+              </div>
+              <h2 className="text-2xl font-bold text-slate-900">
+                Peer Review: Business Pitch Analysis
+              </h2>
+            </div>
+
+            <div className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm">
+              <div className="p-4 border-b border-slate-100 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                  <Users className="w-4 h-4 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-800">Peer Review: Whitney's Business Pitch</h3>
+                  <p className="text-sm text-slate-500">Peer performance analysis • Timestamp: 14:49 - 18:14</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-0">
+                <div className="md:col-span-1">
+                  <img 
+                    src={whitneyPhoto} 
+                    alt="Whitney presenting her business pitch" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="md:col-span-2 p-6 flex flex-col justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CompetencyBadge label="Communicative Competency" variant="communicative" />
+                    <CompetencyBadge label="Interpersonal Competency" variant="interpersonal" />
+                  </div>
+                  <h4 className="font-semibold text-slate-800 mb-3">Peer Reflection: Whitney's Presentation</h4>
+                  <div className="space-y-4 text-slate-700" style={{ lineHeight: '1.8' }}>
+                    <p>
+                      Whitney demonstrated exceptional fluency in delivering her ideas, complemented by effective 
+                      body gestures and consistent eye contact with the audience. Her professional tone and 
+                      confident demeanor created a polished presentation style.
+                    </p>
+                    
+                    <div className="grid gap-3">
+                      <div className="bg-white rounded-lg p-3 border border-green-200">
+                        <h5 className="font-semibold text-green-800 mb-1 text-sm flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4" />
+                          Strengths
+                        </h5>
+                        <p className="text-sm text-slate-600">
+                          Excellent verbal fluency, natural body language, strong eye contact, and a professional, 
+                          confident delivery that commanded attention.
+                        </p>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-3 border border-amber-200">
+                        <h5 className="font-semibold text-amber-800 mb-1 text-sm flex items-center gap-2">
+                          <AlertCircle className="w-4 h-4" />
+                          Area for Consideration
+                        </h5>
+                        <p className="text-sm text-slate-600">
+                          While occasional brief pauses occurred when recalling content, the more significant 
+                          observation was <strong>information density</strong>. Whitney's fluency and extensive 
+                          knowledge led her to pack substantial content into her pitch. For first-time listeners, like 
+                          potential investors, this volume of information can be challenging to process in real-time.
+                        </p>
+                      </div>
+                      
+                      <div className="bg-white rounded-lg p-3 border border-indigo-200">
+                        <h5 className="font-semibold text-indigo-800 mb-1 text-sm flex items-center gap-2">
+                          <Lightbulb className="w-4 h-4" />
+                          Key Takeaway: The Pyramid Narrative
+                        </h5>
+                        <p className="text-sm text-slate-600">
+                          This observation reinforced the <strong>pyramid narrative structure</strong> taught in class: 
+                          the distinction between an elevator pitch, a full investor pitch, and a comprehensive business 
+                          plan. Each format demands different levels of detail. Sometimes <strong>less is more</strong>, pinpointing 
+                          only the most critical points allows the audience to absorb and remember the core message. 
+                          Adapting content depth to context and audience capacity is a crucial communication skill.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <a
+                    href="https://hkust.zoom.us/rec/play/ZiZRsDoyfQ0ocppk1JBkOdRFeYOKDa0_q7dwFpfOVxS4KcpbhPQLSBj-ktKmC5mozhzB3tX-jp6Tf1wC.tLDBIemiFjV8jcZI"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors w-fit mt-4"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Watch Whitney's Pitch (14:49 - 18:14)
+                  </a>
                 </div>
               </div>
             </div>
@@ -532,18 +807,23 @@ export function PhaseTwoPage() {
                 className="mt-4"
               >
                 <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                  <div className="w-full h-[600px] bg-slate-100 flex flex-col items-center justify-center">
-                    <FileText className="w-16 h-16 text-slate-400 mb-4" />
-                    <p className="text-slate-600 font-medium mb-2">Business Plan PDF Placeholder</p>
-                    <p className="text-sm text-slate-500">Upload your final business plan PDF to display here</p>
-                  </div>
+                  <iframe
+                    src={businessPlanPdf}
+                    className="w-full h-[600px]"
+                    title="SENsational Final Business Plan"
+                  />
                   <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
                     <p className="text-sm text-slate-600">
-                      📄 Business-Plan.pdf
+                      📄 LABU2060 - Final Business Plan.pdf
                     </p>
-                    <span className="text-sm text-slate-400 font-medium">
-                      Pending upload
-                    </span>
+                    <a
+                      href={businessPlanPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-emerald-600 hover:text-emerald-800 font-medium"
+                    >
+                      Open in new tab →
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -552,90 +832,8 @@ export function PhaseTwoPage() {
         </div>
       </section>
 
-      {/* Video Evidence Section */}
-      <section className="py-12 bg-slate-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center">
-                <Video className="w-5 h-5 text-violet-600" />
-              </div>
-              <h2 className="text-2xl font-bold text-slate-900">
-                Pitch Video Evidence
-              </h2>
-            </div>
-
-            <p className="text-slate-600 mb-8 leading-relaxed" style={{ lineHeight: '1.9' }}>
-              The following videos document my pitch journey from self-practice to the final presentation. 
-              Each recording captures a different stage of development and allows for comparison of growth.
-            </p>
-
-            <div className="space-y-6">
-              {/* Self Practice Pitch Video */}
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                <div className="p-4 border-b border-slate-100 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
-                    <Play className="w-4 h-4 text-amber-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-800">Self Practice Pitch</h3>
-                    <p className="text-sm text-slate-500">Individual rehearsal before the final presentation</p>
-                  </div>
-                </div>
-                <div className="aspect-video bg-slate-100 flex flex-col items-center justify-center">
-                  <Video className="w-16 h-16 text-slate-400 mb-4" />
-                  <p className="text-slate-600 font-medium mb-2">Self Practice Video Placeholder</p>
-                  <p className="text-sm text-slate-500">Upload your self-practice pitch recording here</p>
-                </div>
-              </div>
-
-              {/* My Final Business Pitch Video */}
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                <div className="p-4 border-b border-slate-100 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center">
-                    <Play className="w-4 h-4 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-800">My Final Business Pitch</h3>
-                    <p className="text-sm text-slate-500">Our team's official pitch presentation</p>
-                  </div>
-                </div>
-                <div className="aspect-video bg-slate-100 flex flex-col items-center justify-center">
-                  <Video className="w-16 h-16 text-slate-400 mb-4" />
-                  <p className="text-slate-600 font-medium mb-2">Final Pitch Video Placeholder</p>
-                  <p className="text-sm text-slate-500">Upload your final business pitch recording here</p>
-                </div>
-              </div>
-
-              {/* Peer Final Business Pitch Video */}
-              <div className="bg-white rounded-xl border border-slate-200 overflow-hidden">
-                <div className="p-4 border-b border-slate-100 flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                    <Users className="w-4 h-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-800">Peer Final Business Pitch</h3>
-                    <p className="text-sm text-slate-500">Recording of a peer team's pitch for comparison analysis</p>
-                  </div>
-                </div>
-                <div className="aspect-video bg-slate-100 flex flex-col items-center justify-center">
-                  <Video className="w-16 h-16 text-slate-400 mb-4" />
-                  <p className="text-slate-600 font-medium mb-2">Peer Pitch Video Placeholder</p>
-                  <p className="text-sm text-slate-500">Upload your peer team's pitch recording here</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Process Writing Reflection - Feedback from All Sources */}
-      <section className="py-12 bg-white">
+      <section className="py-12 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
