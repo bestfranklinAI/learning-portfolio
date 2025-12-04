@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export type BadgeVariant = 'academic' | 'communicative' | 'interpersonal' | 'highlight' | 'default';
+export type BadgeVariant = 'academic' | 'communicative' | 'interpersonal' | 'intercultural' | 'highlight' | 'default';
 
 interface CompetencyBadgeProps {
   label: string;
@@ -12,6 +12,7 @@ const variantStyles: Record<BadgeVariant, string> = {
   academic: 'bg-blue-50 text-blue-700 border-blue-200',
   communicative: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   interpersonal: 'bg-violet-50 text-violet-700 border-violet-200',
+  intercultural: 'bg-amber-50 text-amber-700 border-amber-200',
   highlight: 'bg-amber-50 text-amber-700 border-amber-200',
   default: 'bg-slate-50 text-slate-700 border-slate-200',
 };

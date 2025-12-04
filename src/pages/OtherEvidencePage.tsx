@@ -115,7 +115,7 @@ export function OtherEvidencePage() {
       source: 'Week 2 Course Material',
       whatILearned: 'This was the first structured framework I encountered in the course, and it fundamentally changed how I think about communication. Before this video, I would answer interview questions by rambling through events in chronological order. The STAR method taught me that every good answer has four parts: set the scene (Situation), define your responsibility (Task), describe what you specifically did (Action), and quantify the outcome (Result). The video also emphasized something I had never considered: the Result should be the longest part of your answer because that is what the interviewer actually cares about.',
       type: 'video',
-      howIUsedIt: 'I used STAR far beyond interviews. When writing our business plan Executive Summary, I structured it the same way: here is the problem (Situation), here is what we are trying to achieve (Task), here is our approach (Action), here is the impact (Result). The judges commented that our Executive Summary was "exceptionally clear." That clarity came directly from applying the STAR logic to written communication, not just spoken.',
+      howIUsedIt: 'I used STAR far beyond interviews. When writing our business plan Executive Summary, I structured it the same way: here is the problem (Situation), here is what we are trying to achieve (Task), here is our approach (Action), here is the impact (Result).',
       competencyBadge: { label: 'Communicative Competency', variant: 'communicative' }
     }
   ];

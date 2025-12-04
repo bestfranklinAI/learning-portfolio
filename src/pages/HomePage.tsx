@@ -24,7 +24,7 @@ const timelineItems = [
   {
     week: 'Week 9',
     title: 'Learning About My Audience',
-    description: 'I learned how to create a compelling pitch deck that tells a story. The key was making myself clear—guiding the audience from problem to solution in a logical flow. I realized that being "accurate" isn\'t the same as being "clear" to non-finance audiences.',
+    description: 'I learned how to create a compelling pitch deck that tells a story. The key was making myself clear, guiding the audience from problem to solution in a logical flow. I realized that being "accurate" isn\'t the same as being "clear" to non-finance audiences.',
     isActive: true,
   },
   {
